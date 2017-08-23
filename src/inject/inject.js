@@ -1,9 +1,12 @@
-var gist = document.querySelector('.gist-meta');
+var gist = document.querySelectorAll('.gist-meta');
 
 function replaceText() {
 	if (gist) {
-		var newText = gist.innerHTML.replace('with ❤ ', '');
-		gist.innerHTML = newText;
+		Array.prototype.forEach.call(gist, function(el, i) {
+			console.log(gist);
+			var newText = gist[el, i].innerHTML.replace('with ❤ ', '');
+			gist[el, i].innerHTML = newText;
+		});
 	}
 }
 replaceText();
